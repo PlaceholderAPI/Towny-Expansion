@@ -21,7 +21,7 @@
 package com.extendedclip.papi.expansion.towny;
 
 import com.palmergames.bukkit.towny.Towny;
-import com.palmergames.bukkit.towny.object.TownyUniverse;
+import com.palmergames.bukkit.towny.TownyAPI;
 import java.util.List;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.Bukkit;
@@ -116,7 +116,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getPlayersTown(Player p) {
     try {
-      return TownyUniverse.getDataSource().getResident(p.getName()).getTown().getName();
+      return TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getName();
     } catch (Exception e) {
     }
     return "";
@@ -124,7 +124,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getPlayersFriends(Player p) {
     try {
-      return String.valueOf(TownyUniverse.getDataSource().getResident(p.getName()).getFriends().size());
+      return String.valueOf(TownyAPI.getInstance().getDataSource().getResident(p.getName()).getFriends().size());
     } catch (Exception e) {
     }
     return "";
@@ -132,7 +132,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getPlayersNation(Player p) {
     try {
-      return TownyUniverse.getDataSource().getResident(p.getName()).getTown().getNation().getName();
+      return TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getNation().getName();
     } catch (Exception e) {
     }
     return "";
@@ -140,7 +140,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getPlayersTownyTitle(Player p) {
     try {
-      return TownyUniverse.getDataSource().getResident(p.getName()).getTitle();
+      return TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTitle();
     } catch (Exception e) {
     }
     return "";
@@ -148,7 +148,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getPlayersSurname(Player p) {
     try {
-      return TownyUniverse.getDataSource().getResident(p.getName()).getSurname();
+      return TownyAPI.getInstance().getDataSource().getResident(p.getName()).getSurname();
     } catch (Exception e) {
     }
     return "";
@@ -156,7 +156,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getTownResidents(Player p) {
     try {
-      return String.valueOf(TownyUniverse.getDataSource().getResident(p.getName()).getTown().getNumResidents());
+      return String.valueOf(TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getNumResidents());
     } catch (Exception e) {
     }
     return "";
@@ -164,7 +164,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getTownBankBalance(Player p) {
     try {
-      return String.valueOf(TownyUniverse.getDataSource().getResident(p.getName()).getTown().getHoldingBalance());
+      return String.valueOf(TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getHoldingBalance());
     } catch (Exception e) {
     }
     return "";
@@ -172,7 +172,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getTownMayor(Player p) {
     try {
-      return TownyUniverse.getDataSource().getResident(p.getName()).getTown().getMayor().getName();
+      return TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getMayor().getName();
     } catch (Exception e) {
     }
     return "";
@@ -180,7 +180,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getTownRank(Player p) {
     try {
-      return TownyUniverse.getDataSource().getResident(p.getName()).getTownRanks().get(0);
+      return TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTownRanks().get(0);
     } catch (Exception e) {
     }
     return "";
@@ -188,7 +188,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getNationRank(Player p) {
     try {
-      List<String> ranks = TownyUniverse.getDataSource().getResident(p.getName()).getNationRanks();
+      List<String> ranks = TownyAPI.getInstance().getDataSource().getResident(p.getName()).getNationRanks();
       return ranks == null ? "" : ranks.get(0);
     } catch (Exception e) {
     }
@@ -197,7 +197,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getTownSize(Player p) {
     try {
-      return String.valueOf(TownyUniverse.getDataSource().getResident(p.getName()).getTown().getTotalBlocks());
+      return String.valueOf(TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getTotalBlocks());
     } catch (Exception e) {
     }
     return "";
@@ -205,7 +205,7 @@ public class TownyExpansion extends PlaceholderExpansion {
 
   private String getTownTag(Player p) {
     try {
-      return TownyUniverse.getDataSource().getResident(p.getName()).getTown().getTag();
+      return TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getTag();
     } catch (Exception e) {
     }
     return "";
@@ -213,7 +213,7 @@ public class TownyExpansion extends PlaceholderExpansion {
   
   private String getNationBankBalance(Player p) {
     try {
-      return String.valueOf(TownyUniverse.getDataSource().getResident(p.getName()).getTown().getNation().getHoldingBalance());
+      return String.valueOf(TownyAPI.getInstance().getDataSource().getResident(p.getName()).getTown().getNation().getHoldingBalance());
     } catch (Exception e) {
     }
     return "";
