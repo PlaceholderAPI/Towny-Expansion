@@ -76,11 +76,11 @@ public class TownyChatHook {
           return r.isMayor() ? ChatSettings.getMayorColour()
               : r.isKing() ? ChatSettings.getKingColour() : ChatSettings.getResidentColour();
         case "group":
-          return TownyPerms().getPlayerGroup(p);
+        	return TownyUniverse.getPermissionSource().getPlayerGroup(p);
         case "permprefix":
-          return TownyAPI.getinstance().getPermissionSource().getPrefixSuffix(r, "prefix");
+        	return TownyUniverse.getPermissionSource().getPrefixSuffix(r, "prefix");
         case "permsuffix":
-          return TownyAPI.getPermissionSource().getPrefixSuffix(r, "suffix");
+        	return TownyUniverse.getPermissionSource().getPrefixSuffix(r, "suffix");
         case "channeltag":
           return TownyChatFormatter.formatTownyTag(r, false, false);
       }
