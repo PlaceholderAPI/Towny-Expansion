@@ -7,9 +7,8 @@ import com.palmergames.bukkit.TownyChat.channels.channelTypes;
 import com.palmergames.bukkit.TownyChat.config.ChatSettings;
 import com.palmergames.bukkit.towny.Towny;
 import com.palmergames.bukkit.towny.TownyFormatter;
+import com.palmergames.bukkit.towny.TownyUniverse;
 import com.palmergames.bukkit.towny.object.Resident;
-import com.palmergames.bukkit.towny.object.TownyUniverse;
-import com.palmergames.bukkit.towny.permissions.TownyPermissionSource;
 import com.palmergames.bukkit.towny.TownyAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -76,11 +75,11 @@ public class TownyChatHook {
           return r.isMayor() ? ChatSettings.getMayorColour()
               : r.isKing() ? ChatSettings.getKingColour() : ChatSettings.getResidentColour();
         case "group":
-        	return TownyUniverse.getPermissionSource().getPlayerGroup(p);
+        	return TownyUniverse.getInstance().getPermissionSource().getPlayerGroup(p);
         case "permprefix":
-        	return TownyUniverse.getPermissionSource().getPrefixSuffix(r, "prefix");
+        	return TownyUniverse.getInstance().getPermissionSource().getPrefixSuffix(r, "prefix");
         case "permsuffix":
-        	return TownyUniverse.getPermissionSource().getPrefixSuffix(r, "suffix");
+        	return TownyUniverse.getInstance().getPermissionSource().getPrefixSuffix(r, "suffix");
         case "channeltag":
           return TownyChatFormatter.formatTownyTag(r, false, false);
       }
